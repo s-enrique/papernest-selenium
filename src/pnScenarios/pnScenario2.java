@@ -120,15 +120,11 @@ public class pnScenario2 {
 
         driver.findElement(By.id("button_validate_newspaper")).click();
         element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Entrée'])[1]/following::h4[1]")));
-        try {
-            assertEquals(driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Entrée'])[1]/following::h4[1]")).getText(), "Merci Test !");
-        } catch (Error e) {
-            e.printStackTrace();
-        }
+
         driver.findElement(By.xpath("//button[@id='_validaton_ar']/span")).click();
         driver.findElement(By.xpath("//ppn-progression/div/div[2]/div/span")).click();
         try {
-            assertEquals(driver.findElement(By.xpath("//progression-table[@id='_progress_newspaper']/ppn-progression/div/div[2]/div/span")).getText(), "Demand de changement d'adresse envoyée");
+            assertTrue(driver.findElement(By.xpath("//progression-table[@id='_progress_newspaper']/ppn-progression/div/div[2]/div/span")).getText().contains("Demande de changement d'adresse"));
         } catch (Error e) {
             e.printStackTrace();
         }
