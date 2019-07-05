@@ -119,7 +119,7 @@ public class pnScenario2 {
 
 
         driver.findElement(By.id("button_validate_newspaper")).click();
-        element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Entrée'])[1]/following::h4[1]")));
+        element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@id='_validaton_ar']/span")));
 
         driver.findElement(By.xpath("//button[@id='_validaton_ar']/span")).click();
         driver.findElement(By.xpath("//ppn-progression/div/div[2]/div/span")).click();
